@@ -1,0 +1,155 @@
+*{
+ list-style: none;
+ text-decoration: none;
+ margin: 0;
+}
+body{ min-height:100vh;
+    margin:0; 
+    position:relative; }
+
+body::after {
+    content: '';
+    display: block;
+    height: 150px; /* Set same as footer's height */
+  }
+/* navigator styles */
+.linkage{
+    color:rgb(184, 141, 141);
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+.navItems{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-weight: 700;
+}
+.navContainer{
+    background-color: rgb(81, 25, 25);
+}
+.linkage:hover{
+    color: azure;
+}
+.logo{
+    width: 100px;
+}
+.navUserEnter{
+    display: flex;
+    margin-right: 2em;
+}
+
+/* ingredients styles */
+.ingredients{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+} 
+.ingredientsHeader{
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 1.8rem;
+}
+.ingredient{
+    width: 30%;
+    height: 200px; 
+    margin-bottom: 1em;
+    padding:4em;
+    border-radius: 5px;
+    overflow: visible;
+}
+
+.flour{
+    background-image: url(../images/flour.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.oil{
+    background-image: url(../images/oil.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.egg{
+    background-image: url(../images/eggs.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.milk{
+    background-image: url(../images/milk.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.butter{
+    background-image: url(../images/butter.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.honey{
+    background-image: url(../images/honey.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+}
+.hiddenDescription{
+     display: none; 
+    
+}
+.ingredientHeader{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.ingredientPara{
+    font-size: 2rem;
+    font-weight: 300;
+    overflow: hidden;
+    min-width: 17ch;
+   max-width: 40ch;
+}
+.ingredient:hover{
+    height: 100%;
+    background: #A52A2A;
+    transition: 1s;
+}
+.ingredient:hover .hiddenDescription{
+    display: block;
+    color: #221402;
+}
+
+/* footer styles */
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:white;
+    background-image: url(../images/footer.jpg);
+    background-color: rgb(51, 51, 51);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+}
+.contactUs{
+    width: 40%;
+    font-size: 2.5rem;
+}
+.footerLogo{
+    width: 25%;
+    max-height: 150px;
+}
+.socialIcons{
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+.socialIcon:hover{
+    color:  rgb(205, 129, 30);
+  }

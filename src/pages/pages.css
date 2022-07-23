@@ -1,0 +1,40 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+}
+/* home page style */
+.homeMain{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: brown;
+}
+.introCard{
+    width: 50%;
+    background-color: brown;
+    color: white;
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+.introCardHeader{
+    font-size: 1.8rem;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.introCardParagraph{
+ font-size: 1.8rem;
+ font-family: 'Edu NSW ACT Foundation', cursive;
+ margin-top: 1em;
+}
+.logoCard{
+    width: 40%;
+    max-height: 300px;
+}
+.getStartBtn{
+ margin-left: 0.3em;
+ color: rgb(205, 129, 30);
+}
+.getStartBtn:hover{
+    color: rgb(56, 34, 5);
+}
+
