@@ -44,15 +44,15 @@ export default function LogIn() {
   
   return (
     <div>
-        <div>{error}</div>
+        <div className='error'>{error}</div>
       <form  action="#"
             method="POST"
-            onSubmit={handleSubmit}>
-        <label htmlFor="email" >Enter your email</label>
-        <input type="email"  id='email' name="email" value={email} onChange={(e)=>{handleChange(e)}}/>
-        <label htmlFor="password">Enter a password</label>
-        <input type="password" id='password'  name="password" value={password} onChange={(e)=>{handleChange(e)}} />
-        <button type='submit'>Log In</button>
+            onSubmit={handleSubmit} className="loginForm">
+        <label htmlFor="email" className="loginLabels" >Enter your email</label>
+        <input type="email"   id='email' name="email" value={email} className="loginInput" onChange={(e)=>{handleChange(e)}}/>
+        <label htmlFor="password" className="loginLabels">Enter a password</label>
+        <input type="password" id='password'  name="password" className="loginInput" value={password} onChange={(e)=>{handleChange(e)}} />
+        <button className='loginSubmit' type='submit'>Log In</button>
       </form>
     </div>
   )

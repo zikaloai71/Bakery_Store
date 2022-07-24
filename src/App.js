@@ -9,11 +9,13 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Products from './pages/Products';
 import {BrowserRouter as Router ,Routes , Route} from "react-router-dom";
+import AuthProvider from "./context/auth";
 
 function App() {
 
   return (
-    <>
+    
+    <AuthProvider>
     <Router>
       <Nav />
       <Routes>
@@ -25,8 +27,9 @@ function App() {
       </Routes>
       <Footer />
     </Router>
-    </>
-    
+    </AuthProvider>
+   
+
   
   );
 }

@@ -61,7 +61,7 @@ export default function SignUp() {
   
   async function signInWithGoogle(){
     let provider = new GoogleAuthProvider();
-     const result=await signInWithPopup(auth,provider);
+    const result=await signInWithPopup(auth,provider);
     await setDoc(doc(db, "users", result.user.uid), {
       uid: result.user.uid,
       name:auth.currentUser.displayName,
@@ -72,21 +72,23 @@ export default function SignUp() {
   }
   return (
     <div>
-      <div>{error}</div>
+      <div className='error'>{error}</div>
       <form  action="#"
             method="POST"
-            onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name</label>
-        <input type="text" id='name' name="name"   value={name} onChange={(e)=>{handleChange(e)}} />
-        <label htmlFor="email" >Enter your email</label>
-        <input type="email"  id='email' name="email" value={email} onChange={(e)=>{handleChange(e)}}/>
-        <label htmlFor="password">Enter a password</label>
-        <input type="password" id='password'  name="password" value={password} onChange={(e)=>{handleChange(e)}} />
-        <label htmlFor="confirmationPassword">confirm password</label>
-        <input type="password" id='confirmationPassword' name="confirmPassword" value={confirmPassword}  onChange={(e)=>{handleChange(e)}} />
-        <button type='submit'>Sign up</button>
+            onSubmit={handleSubmit} className="signUpForm">
+        <label htmlFor="name" className='signUpLabels'>Enter your name</label>
+        <input type="text" id='name' name="name" className='signUpInput'   value={name} onChange={(e)=>{handleChange(e)}} />
+        <label htmlFor="email"  className='signUpLabels' >Enter your email</label>
+        <input type="email"  id='email' name="email" className='signUpInput'  value={email} onChange={(e)=>{handleChange(e)}}/>
+        <label htmlFor="password"  className='signUpLabels'>Enter a password</label>
+        <input type="password" id='password' className='signUpInput'   name="password" value={password} onChange={(e)=>{handleChange(e)}} />
+        <label htmlFor="confirmationPassword"  className='signUpLabels'>confirm password</label>
+        <input type="password" id='confirmationPassword' name="confirmPassword" value={confirmPassword} className='signUpInput'   onChange={(e)=>{handleChange(e)}} />
+        <button className='signUpButton' type='submit'>Sign up</button>
+        <button onClick={signInWithGoogle} className="signWithGoogle">
+      <i className=" googleIcon fa-brands fa-google "></i>sign with google</button>
       </form>
-      <button onClick={signInWithGoogle}>sign in with google</button>
+   
     </div>
   )
 }

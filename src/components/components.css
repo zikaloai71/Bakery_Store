@@ -10,7 +10,7 @@ body{ min-height:100vh;
 body::after {
     content: '';
     display: block;
-    height: 150px; /* Set same as footer's height */
+    height: 200px; /* Set same as footer's height */
   }
 /* navigator styles */
 .linkage{
@@ -19,6 +19,7 @@ body::after {
     display: flex;
     align-items: center;
 }
+
 .navItems{
     display: flex;
     justify-content: space-between;
@@ -167,31 +168,152 @@ body::after {
       transform: scale(1.0);
     }
   }
+/* sign up styles */
+  .signUpForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:2em 20% 2em 20%;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    background-color: #A52A2A;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 4px 0px 48px 0px rgba(166,90,90,0.49);
+  }
+  .signUpLabels{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.signUpInput{
+    width: 60%;
+    padding: 0.4em;
+    border: 2px solid #6a4009;
+    border-radius: 5px;
+    outline: none;
+}
+  .signUpButton{
+    width: 30%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    background-color: #6a4009;
+    font-size: 1rem;
+    font-weight: 800;
+    outline: none;
+    border: 0px;
+    padding: 0.4em;
+    border-radius: 5px;
+  }
+  .googleIcon{
+    margin-right: 0.3em;
+  }
+  .signWithGoogle{
+    width:30%;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    background-color: #6a4009;
+    outline: none;
+    border: 0px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 0.4em;
+    border-radius: 5px;
+  }
+  .signWithGoogle:hover{
+    background-color: rgb(171, 7, 7);
+  }
+  .signWithGoogle:hover .googleIcon{
+    color: black ;
+  }
+  .signUpButton:hover{
+    background-color: rgb(171, 7, 7);
+  }
+/* log in styles */
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:2em 20% 2em 20%;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    background-color: #A52A2A;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 4px 0px 48px 0px rgba(166,90,90,0.49);
+}
+.loginLabels{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.loginInput{
+    width: 60%;
+    padding: 0.4em;
+    border: 2px solid #6a4009;
+    border-radius: 5px;
+    outline: none;
+}
+.loginSubmit{
+    width: 30%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    background-color: #6a4009;
+    font-size: 1rem;
+    font-weight: 800;
+    outline: none;
+    border: 0px;
+    padding: 0.4em;
+    border-radius: 5px;
+}
+.loginSubmit:hover{
+    background-color: rgb(171, 7, 7);
+  }
+.error{
+    text-align: center;
+    color: #221402;
+    font-size: 3rem;
+    margin-top: 0.2em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
 /* footer styles */
 .footer{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     color:white;
     background-image: url(../images/footer.jpg);
     background-color: rgb(51, 51, 51);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     font-family: 'Edu NSW ACT Foundation', cursive;
     font-weight: 700;
     position: absolute;
     bottom: 0;
-    height: 150px;
+    height: 200px;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
 }
 .contactUs{
     width: 40%;
     font-size: 2.5rem;
 }
+.contactUsHeader{
+    text-align: center;
+    margin-bottom: 1em;
+}
 .footerLogo{
-    width: 25%;
-    max-height: 150px;
+    max-height: 200px;
 }
 .socialIcons{
   display: flex;
@@ -201,3 +323,10 @@ body::after {
 .socialIcon:hover{
     color:  rgb(205, 129, 30);
   }
+
+.copyRights{
+width: 100%;
+text-align: center;
+font-size: 15px;
+margin-top: 3em;
+}
