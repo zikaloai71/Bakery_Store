@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 import "./components.css";
 import logo from "../images/Logo2.png";
 
-export default function Nav() {
+export default function Nav(props) {
+  const { cartItems } = props;
  
 
   const { user } = useContext(AuthContext);
@@ -34,7 +35,8 @@ export default function Nav() {
                 Our Products
               </Link>
               <Link className="linkage" to="/Cart">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"><sup> {cartItems.length}</sup></i>
+             
               </Link>
               <Link className="linkage" onClick={handleSignOut} to="/LogIn">
                 Log out

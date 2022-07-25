@@ -3,7 +3,6 @@ import "./pages.css";
 import emptyCart from "../images/emptyCart.svg";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Cart(props) {
   const { cartItems, onAdd, onRemove } = props;
   const totalPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -12,7 +11,6 @@ export default function Cart(props) {
    function toProducts(){
     navigate("/Products")
   }
-
 
   if(cartItems.length === 0) {
     return(<>
@@ -43,7 +41,7 @@ export default function Cart(props) {
         )
         })
         }
-    <hr />
+   
     <div className='total'> <p>total =</p> <p className='totalPrice'>{totalPrice}</p></div>
     </div>
   )

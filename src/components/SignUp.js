@@ -22,6 +22,7 @@ export default function SignUp() {
   }
   async function handleSubmit(e) {
     e.preventDefault();
+  
     setNewUser({ ...newUser, error: null, loading: true });
     if (!name || !email || !password) {
       setNewUser({ ...newUser, error: "All fields are required" });
@@ -54,6 +55,7 @@ export default function SignUp() {
     } catch (err) {
       setNewUser({ ...newUser, error: err.message, loading: false });
     }
+   
   }
   if (loading) {
     return (<LoadingComponent />);
@@ -68,11 +70,12 @@ export default function SignUp() {
       email:auth.currentUser.email,
       createdAt: Timestamp.fromDate(new Date()),
     });
-    navigate("/Products");
+  navigate("/Products");
   }
   return (
     <div>
       <div className='error'>{error}</div>
+      <div className="signUpContainer">
       <form  action="#"
             method="POST"
             onSubmit={handleSubmit} className="signUpForm">
@@ -85,10 +88,11 @@ export default function SignUp() {
         <label htmlFor="confirmationPassword"  className='signUpLabels'>confirm password</label>
         <input type="password" id='confirmationPassword' name="confirmPassword" value={confirmPassword} className='signUpInput'   onChange={(e)=>{handleChange(e)}} />
         <button className='signUpButton' type='submit'>Sign up</button>
+      </form>
+        <h1 className='or'>OR</h1>
         <button onClick={signInWithGoogle} className="signWithGoogle">
       <i className=" googleIcon fa-brands fa-google "></i>sign with google</button>
-      </form>
-   
+      </div>
     </div>
   )
 }

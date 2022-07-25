@@ -169,19 +169,21 @@ body::after {
     }
   }
 /* sign up styles */
+  .signUpContainer{
+    background-color: #A52A2A;
+    box-shadow: 4px 0px 48px 0px rgba(166,90,90,0.49);
+    margin:2em 20% 2em 20%;
+    border-radius: 5px;
+    padding: 1em;
+  }
   .signUpForm{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:2em 20% 2em 20%;
     font-family: 'Edu NSW ACT Foundation', cursive;
     color:white;
     font-weight: 800;
     font-size: 1.5rem;
-    background-color: #A52A2A;
-    border-radius: 5px;
-    padding: 1em;
-    box-shadow: 4px 0px 48px 0px rgba(166,90,90,0.49);
   }
   .signUpLabels{
     margin-top: 0.5em;
@@ -197,7 +199,7 @@ body::after {
   .signUpButton{
     width: 30%;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.3em;
     font-family: 'Edu NSW ACT Foundation', cursive;
     color:white;
     background-color: #6a4009;
@@ -213,6 +215,8 @@ body::after {
   }
   .signWithGoogle{
     width:30%;
+    margin-left:35% ;
+    margin-right:35%  ;
     font-family: 'Edu NSW ACT Foundation', cursive;
     color:white;
     background-color: #6a4009;
@@ -222,6 +226,11 @@ body::after {
     font-weight: 800;
     padding: 0.4em;
     border-radius: 5px;
+  }
+  .or{
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Edu NSW ACT Foundation', cursive;
   }
   .signWithGoogle:hover{
     background-color: rgb(171, 7, 7);
@@ -318,7 +327,8 @@ color: white;
 font-size: 1.2rem;
 font-weight: 800;
 cursor: pointer;
-
+border-bottom-left-radius:5px ;
+border-bottom-right-radius:5px ;
 }
 .addToCart:hover{
   background-color: #221402;

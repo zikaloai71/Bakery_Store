@@ -45,7 +45,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Nav />
+        <Nav cartItems={cartItems} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/LogIn" element={<LogIn />} />
@@ -58,7 +58,7 @@ function App() {
           />
           <Route
             path="/Products"
-            element={<Products data={data} onAdd={onAdd} />}
+            element={<Products data={data} onAdd={onAdd}   />}
           />
         </Routes>
         <Footer />
