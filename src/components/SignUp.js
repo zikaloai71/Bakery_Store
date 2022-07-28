@@ -13,9 +13,10 @@ export default function SignUp() {
     confirmPassword:"",
     error: null,
     loading: false,
+ 
   });
   const navigate = useNavigate();
-  const { name, email, password, confirmPassword, error, loading } = newUser;
+  const { name, email, password, confirmPassword, error, loading  } = newUser;
 
   function handleChange(e) {
     setNewUser({...newUser, [e.target.name]: e.target.value});
@@ -43,6 +44,7 @@ export default function SignUp() {
         name,
         email,
         createdAt: Timestamp.fromDate(new Date()),
+        
       });
       setNewUser({
         name: "",
@@ -50,6 +52,7 @@ export default function SignUp() {
         password: "",
         error: null,
         loading: false,
+       
       });
       navigate("/Products");
     } catch (err) {
@@ -69,6 +72,7 @@ export default function SignUp() {
       name:auth.currentUser.displayName,
       email:auth.currentUser.email,
       createdAt: Timestamp.fromDate(new Date()),
+     
     });
   navigate("/Products");
   }

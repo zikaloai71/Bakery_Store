@@ -1,5 +1,5 @@
 import "./App.css";
-// import db from "./firebase-config";
+import { db } from "./firebase-config";
 // import auth from "./firebase-config";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
@@ -10,11 +10,23 @@ import Footer from "./components/Footer";
 import Products from "./pages/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthProvider from "./context/auth";
-import React, { useState} from "react";
+import React, { useState , useEffect} from "react";
+import { collection , getDocs  } from "firebase/firestore";
 import data from "./data";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [users,setUsers]=useState([]);
+ 
+  const userCollectionRef=collection(db,"users");
+
+  useEffect(()=>{
+    const getUsers=async()=>{
+      const usersData = await getDocs(userCollectionRef);
+      setUsers(usersData.docs.map((doc)=>({...doc.data(),id:doc.id})))
+    }
+    getUsers()
+  })
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -58,7 +70,7 @@ function App() {
           />
           <Route
             path="/Products"
-            element={<Products data={data} onAdd={onAdd}   />}
+            element={<Products data={data} onAdd={onAdd} users={users}   />}
           />
         </Routes>
         <Footer />

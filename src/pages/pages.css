@@ -9,6 +9,8 @@
     justify-content: space-around;
     align-items: center;
     background-color: brown;
+   padding-left: 4em;
+  
 }
 .introCard{
     width: 50%;
@@ -44,7 +46,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-  
 }
 /* cart page styles */
 .emptyCart{
@@ -124,3 +125,18 @@ font-size: 2rem;
     padding: 0.8em;
     font-size: 1rem;
 }
+@media only screen and (max-width:800px) {
+ 
+    .homeMain{
+       padding-left: 0em;
+    }
+    .introCard{
+        width: 100%;
+        margin: 4em 1em 3em 1em;
+    }
+    .logoCard{
+        display: none;
+    }
+
+   }
+   

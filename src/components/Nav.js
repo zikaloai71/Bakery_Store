@@ -45,7 +45,7 @@ export default function Nav(props) {
           ) : (
             <>
               <Link className="linkage" to="/SignUp">
-                Sign In
+                Sign up
               </Link>
               <Link className="linkage" to="/LogIn">
                 Log In

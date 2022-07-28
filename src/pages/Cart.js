@@ -2,11 +2,14 @@ import React from 'react';
 import "./pages.css";
 import emptyCart from "../images/emptyCart.svg";
 import { useNavigate } from "react-router-dom";
+// import { db } from '../firebase-config';
+// import { doc, updateDoc } from "firebase/firestore";
 
 export default function Cart(props) {
   const { cartItems, onAdd, onRemove } = props;
   const totalPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
- 
+
+
   const navigate = useNavigate();
    function toProducts(){
     navigate("/Products")
