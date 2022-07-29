@@ -1,37 +1,34 @@
 import React from "react";
 import "./components.css";
-import { db } from "../firebase-config";
-import { auth } from "../firebase-config";
-import { doc, updateDoc } from "firebase/firestore";
-import { onAuthStateChanged } from "firebase/auth";
+// import { db } from "../firebase-config";
+// import { auth } from "../firebase-config";
+// import {
+//   doc,
+//   updateDoc,
+//   arrayUnion,
+//   arrayRemove,
+//   increment,
+// } from "firebase/firestore";
+// import { async } from "@firebase/util";
+// import { onAuthStateChanged } from "firebase/auth";
 
 export default function product(props) {
-  const { data, onAdd, users } = props;
+  const { data , addProduct} = props;
 
-  const updateCart = async (id, productName, price) => {
-    const userDoc = doc(db, "users", id);
-    let check = users.map((user) => {
-      if (user[productName]) {
-        return user[productName].quantity;
-      } else {
-        return false;
-      }
-    });
 
-    if (check[0]) {
-      await updateDoc(userDoc, {
-        [productName]: {
-          product: productName,
-          price: price * check[0] + price,
-          quantity: check[0] + 1,
-        },
-      });
-    } else {
-      await updateDoc(userDoc, {
-        [productName]: { product: productName, price: price, quantity: 1 },
-      });
-    }
-  };
+//   async function increaseQuantity(title){
+//     // const cartDoc = doc(db, "carts", userCart.uid);
+//     if (userCart.uid === userLogId ) {
+//      for(let i=0;i<userCart.products.length;i++){
+//      if (userCart.products[i].name===title){
+//       userCart.products[i].quantity+=1;
+//       break;
+//     //  await updateDoc(cartDoc,{userCart.products[i].quantity:increment(1)});
+//      }
+//      }
+//   }
+// }
+ 
 
   return (
     <div className="product">
@@ -41,17 +38,8 @@ export default function product(props) {
       <p className="productPrice">{data.price} LE</p>
       <button
         onClick={() => {
-          onAdd(data);
-
-          onAuthStateChanged(auth, (user) => {
-            if (user) {
-              const uid = user.uid;
-
-              updateCart(uid, data.title, data.price);
-            } else {
-              return;
-            }
-          });
+          addProduct(data.title, data.price);
+          // increaseQuantity(data.title);
         }}
         className="addToCart"
       >

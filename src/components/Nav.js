@@ -9,12 +9,10 @@ import "./components.css";
 import logo from "../images/Logo2.png";
 
 export default function Nav(props) {
-  const { cartItems } = props;
- 
-
-  const { user } = useContext(AuthContext);
+  
+  const { user  } = useContext(AuthContext);
   const navigate = useNavigate();
-
+ 
 
   async function handleSignOut() {
     await signOut(auth);
@@ -29,21 +27,21 @@ export default function Nav(props) {
           <li> HOME</li>
         </Link>
         <li className="navUserEnter">
-          {user ? (
+          {user ? 
             <>
               <Link className="linkage" to="/Products">
                 Our Products
               </Link>
               <Link className="linkage" to="/Cart">
-              <i className="fa-solid fa-cart-shopping"><sup> {cartItems.length}</sup></i>
+              <i className="fa-solid fa-cart-shopping"><sup>0</sup></i>
              
               </Link>
               <Link className="linkage" onClick={handleSignOut} to="/LogIn">
                 Log out
               </Link>
             </>
-          ) : (
-            <>
+           : (
+           <>
               <Link className="linkage" to="/SignUp">
                 Sign up
               </Link>

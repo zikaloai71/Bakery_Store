@@ -1,7 +1,7 @@
 import React , { useState }  from 'react';
 import { auth, db } from "../firebase-config";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { setDoc, doc, Timestamp } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import LoadingComponent from "../components/LoadingComponent";
 
@@ -13,6 +13,7 @@ export default function SignUp() {
     confirmPassword:"",
     error: null,
     loading: false,
+    
  
   });
   const navigate = useNavigate();
@@ -39,12 +40,11 @@ export default function SignUp() {
         email,
         password
       );
-      await setDoc(doc(db, "users", result.user.uid), {
-        uid: result.user.uid,
-        name,
-        email,
-        createdAt: Timestamp.fromDate(new Date()),
-        
+      await setDoc(doc(db, "carts", result.user.uid), {
+          name,
+          products:[],
+          uid: result.user.uid,
+          email,
       });
       setNewUser({
         name: "",
@@ -67,11 +67,12 @@ export default function SignUp() {
   async function signInWithGoogle(){
     let provider = new GoogleAuthProvider();
     const result=await signInWithPopup(auth,provider);
-    await setDoc(doc(db, "users", result.user.uid), {
-      uid: result.user.uid,
+    await setDoc(doc(db, "carts", result.user.uid), {
       name:auth.currentUser.displayName,
+      products:[],
+      uid: result.user.uid,
       email:auth.currentUser.email,
-      createdAt: Timestamp.fromDate(new Date()),
+      
      
     });
   navigate("/Products");

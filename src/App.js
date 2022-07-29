@@ -1,6 +1,5 @@
 import "./App.css";
 import { db } from "./firebase-config";
-// import auth from "./firebase-config";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import Home from "./pages/Home";
@@ -13,51 +12,47 @@ import AuthProvider from "./context/auth";
 import React, { useState , useEffect} from "react";
 import { collection , getDocs  } from "firebase/firestore";
 import data from "./data";
+import { auth } from "./firebase-config";
+import {
+  doc,
+  updateDoc,
+  arrayUnion,
+  
+} from "firebase/firestore";
+
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const [users,setUsers]=useState([]);
- 
-  const userCollectionRef=collection(db,"users");
-
+  const [usersCarts,setUsersCarts]=useState([]);
+  const cartCollectionRef=collection(db,"carts");
   useEffect(()=>{
-    const getUsers=async()=>{
-      const usersData = await getDocs(userCollectionRef);
-      setUsers(usersData.docs.map((doc)=>({...doc.data(),id:doc.id})))
+    const getUsersCarts=async()=>{
+      const usersData = await getDocs(cartCollectionRef);
+      setUsersCarts(usersData.docs.map((doc)=>({...doc.data(),id:doc.id})))
     }
-    getUsers()
+    getUsersCarts()
   })
-
-  const onAdd = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
+  
+  
+  async function addProduct(title, price) {
+    let userId=auth.currentUser.uid;
+    const userCart = usersCarts.find((user) => {
+      return user.uid === userId;
+    });
+    if (userCart.uid === userId) {
+      const cartDoc = doc(db, "carts", userCart.uid);
+      let product = {
+        name: title,
+        price: price,
+        quantity: 1,
+      };
+      await updateDoc(cartDoc, { products: arrayUnion(product) });
     }
-  };
-
-  const onRemove = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-    if (exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== product.id));
-    } else {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-        )
-      );
-    }
-  };
+  }
 
   return (
-    <AuthProvider>
+    <AuthProvider >
       <Router>
-        <Nav cartItems={cartItems} />
+        <Nav  />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/LogIn" element={<LogIn />} />
@@ -65,12 +60,12 @@ function App() {
           <Route
             path="/Cart"
             element={
-              <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  />
+              <Cart   usersCarts={usersCarts}  />
             }
           />
           <Route
             path="/Products"
-            element={<Products data={data} onAdd={onAdd} users={users}   />}
+            element={<Products data={data}   addProduct={addProduct}   />}
           />
         </Routes>
         <Footer />
@@ -80,3 +75,29 @@ function App() {
 }
 
 export default App;
+
+  // const onAdd = (product) => {
+  //   const exist = cartItems.find((x) => x.id === product.id);
+  //   if (exist) {
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //         x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+  //       )
+  //     );
+  //   } else {
+  //     setCartItems([...cartItems, { ...product, qty: 1 }]);
+  //   }
+  // };
+
+  // const onRemove = (product) => {
+  //   const exist = cartItems.find((x) => x.id === product.id);
+  //   if (exist.qty === 1) {
+  //     setCartItems(cartItems.filter((x) => x.id !== product.id));
+  //   } else {
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //         x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+  //       )
+  //     );
+  //   }
+  // };
