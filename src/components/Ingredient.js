@@ -1,9 +1,11 @@
 import React from 'react'
 import "./components.css"
+import title from "../images/title.png";
 export default function Ingredient() {
   return (
     <section className='ingredients'>
     <h1 className="ingredientsHeader">Our Ingredients</h1>
+     <div className='titleBar'><img src={title} className="titleBarPng" alt="" /></div>
     <div className="ingredient flour">
       <div className="hiddenDescription">
        <h3 className=" ingredientHeader">Flour</h3>

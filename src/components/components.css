@@ -56,9 +56,17 @@ body::after {
 } 
 .ingredientsHeader{
     width: 100%;
-    margin-bottom: 1em;
     font-size: 3rem;
     color: #221402;
+    margin-bottom: 0.2em;
+}
+.titleBar{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.titleBarPng{
+  width: 25%;
 }
 .ingredient{
     width: 30%;

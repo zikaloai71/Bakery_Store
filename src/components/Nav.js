@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
@@ -7,13 +7,43 @@ import { AuthContext } from "../context/auth";
 import { useNavigate } from "react-router-dom";
 import "./components.css";
 import logo from "../images/Logo2.png";
+import LoadingComponent from "./LoadingComponent";
 
 export default function Nav(props) {
-  
+  const { itemsInCart } = props;
   const { user  } = useContext(AuthContext);
   const navigate = useNavigate();
  
 
+   
+  // if(user){
+  // if(usersCarts.length===0){
+  //   return <LoadingComponent />
+  //  }
+  //  else{
+  //   const userCart = usersCarts.find((user) => {
+  //     let userId= auth.currentUser.uid;
+  //      return user.uid === userId;
+  //    });
+  //    setItemsInCart(userCart.products.length)
+  //  }
+  // } 
+
+   
+  // if(user){
+  // if(usersCarts.length===0){
+  //   return <LoadingComponent />
+  //  }
+  //  else{
+  //   const userCart = usersCarts.find((user) => {
+  //     let userId= auth.currentUser.uid;
+  //      return user.uid === userId;
+  //    });
+  //    setItemsInCart(userCart.products.length)
+  //  }
+  // }
+
+   
   async function handleSignOut() {
     await signOut(auth);
     navigate("/LogIn");
@@ -33,7 +63,7 @@ export default function Nav(props) {
                 Our Products
               </Link>
               <Link className="linkage" to="/Cart">
-              <i className="fa-solid fa-cart-shopping"><sup>0</sup></i>
+              <i className="fa-solid fa-cart-shopping"><sup>{itemsInCart}</sup></i>
              
               </Link>
               <Link className="linkage" onClick={handleSignOut} to="/LogIn">

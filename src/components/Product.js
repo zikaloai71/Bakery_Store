@@ -16,19 +16,6 @@ export default function product(props) {
   const { data , addProduct} = props;
 
 
-//   async function increaseQuantity(title){
-//     // const cartDoc = doc(db, "carts", userCart.uid);
-//     if (userCart.uid === userLogId ) {
-//      for(let i=0;i<userCart.products.length;i++){
-//      if (userCart.products[i].name===title){
-//       userCart.products[i].quantity+=1;
-//       break;
-//     //  await updateDoc(cartDoc,{userCart.products[i].quantity:increment(1)});
-//      }
-//      }
-//   }
-// }
- 
 
   return (
     <div className="product">

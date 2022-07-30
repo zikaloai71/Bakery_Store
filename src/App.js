@@ -9,21 +9,23 @@ import Footer from "./components/Footer";
 import Products from "./pages/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthProvider from "./context/auth";
-import React, { useState , useEffect} from "react";
-import { collection , getDocs  } from "firebase/firestore";
+import React, { useState , useEffect } from "react";
+import { arrayRemove, collection , getDocs  } from "firebase/firestore";
 import data from "./data";
 import { auth } from "./firebase-config";
 import {
   doc,
   updateDoc,
   arrayUnion,
-  
+
 } from "firebase/firestore";
 
 
 function App() {
   const [usersCarts,setUsersCarts]=useState([]);
+  let [itemsInCart,setItemsInCart]=useState(0);
   const cartCollectionRef=collection(db,"carts");
+ 
   useEffect(()=>{
     const getUsersCarts=async()=>{
       const usersData = await getDocs(cartCollectionRef);
@@ -32,8 +34,24 @@ function App() {
     getUsersCarts()
   })
   
-  
-  async function addProduct(title, price) {
+
+async function addProduct(title, price) {
+      let userId=auth.currentUser.uid;
+      const userCart = usersCarts.find((user) => {
+        return user.uid === userId;
+      });
+      if (userCart.uid === userId) {
+        const cartDoc = doc(db, "carts", userCart.uid);
+        let product = {
+          name: title,
+          price: price,
+          quantity: 1,
+        };
+        await updateDoc(cartDoc, { products: arrayUnion(product) });
+        setItemsInCart(userCart.products.length+1);
+      }
+    }
+  const onRemove = async (title,price) => {
     let userId=auth.currentUser.uid;
     const userCart = usersCarts.find((user) => {
       return user.uid === userId;
@@ -45,14 +63,52 @@ function App() {
         price: price,
         quantity: 1,
       };
-      await updateDoc(cartDoc, { products: arrayUnion(product) });
+      await updateDoc(cartDoc, { products: arrayRemove(product) });
+      setItemsInCart(userCart.products.length-1);
+      
     }
-  }
+  };
+
+//   async function increaseQuantity(title){
+//     // const cartDoc = doc(db, "carts", userCart.uid);
+//     if (userCart.uid === userLogId ) {
+//      for(let i=0;i<userCart.products.length;i++){
+//      if (userCart.products[i].name===title){
+//       userCart.products[i].quantity+=1;
+//       break;
+//     //  await updateDoc(cartDoc,{userCart.products[i].quantity:increment(1)});
+//      }
+//      }
+//   }
+// }
+  //   const onAdd = async (product) => {
+  //   let userId=auth.currentUser.uid;
+  //   const userCart = usersCarts.find((user) => {
+  //       return user.uid === userId;
+  //     });
+  //   const cartDoc = doc(db, "carts", userCart.uid);
+  //   const exist = userCart.products.find((x) => x.name === product.name);
+  //   if (exist) {
+
+  //     console.log(exist.quantity+=1)
+  //     // await updateDoc(cartDoc,{products:arrayUnion(quantity + 1)});
+  //     // setCartItems(
+  //     //   cartItems.map((x) =>
+  //     //     x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+  //     //   )
+  //     // );
+  //   } else {
+  //     return
+  //     // setCartItems([...cartItems, { ...product, qty: 1 }]);
+  //   }
+  // };
+
+
 
   return (
     <AuthProvider >
       <Router>
-        <Nav  />
+        <Nav itemsInCart={itemsInCart}   />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/LogIn" element={<LogIn />} />
@@ -60,7 +116,7 @@ function App() {
           <Route
             path="/Cart"
             element={
-              <Cart   usersCarts={usersCarts}  />
+              <Cart   usersCarts={usersCarts} onRemove={onRemove}  />
             }
           />
           <Route
@@ -76,28 +132,4 @@ function App() {
 
 export default App;
 
-  // const onAdd = (product) => {
-  //   const exist = cartItems.find((x) => x.id === product.id);
-  //   if (exist) {
-  //     setCartItems(
-  //       cartItems.map((x) =>
-  //         x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-  //       )
-  //     );
-  //   } else {
-  //     setCartItems([...cartItems, { ...product, qty: 1 }]);
-  //   }
-  // };
 
-  // const onRemove = (product) => {
-  //   const exist = cartItems.find((x) => x.id === product.id);
-  //   if (exist.qty === 1) {
-  //     setCartItems(cartItems.filter((x) => x.id !== product.id));
-  //   } else {
-  //     setCartItems(
-  //       cartItems.map((x) =>
-  //         x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-  //       )
-  //     );
-  //   }
-  // };
