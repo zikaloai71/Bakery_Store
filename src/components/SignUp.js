@@ -84,13 +84,13 @@ export default function SignUp() {
       <form  action="#"
             method="POST"
             onSubmit={handleSubmit} className="signUpForm">
-        <label htmlFor="name" className='signUpLabels'>Enter your name</label>
+        <label htmlFor="name" className='signUpLabels'><i className="wheatIcon fa-solid fa-wheat-awn"></i> Enter your name <i className="fa-solid fa-wheat-awn"></i></label>
         <input type="text" id='name' name="name" className='signUpInput'   value={name} onChange={(e)=>{handleChange(e)}} />
-        <label htmlFor="email"  className='signUpLabels' >Enter your email</label>
+        <label htmlFor="email"  className='signUpLabels' ><i className="wheatIcon fa-solid fa-wheat-awn"></i> Enter your email <i className="fa-solid fa-wheat-awn"></i></label>
         <input type="email"  id='email' name="email" className='signUpInput'  value={email} onChange={(e)=>{handleChange(e)}}/>
-        <label htmlFor="password"  className='signUpLabels'>Enter a password</label>
+        <label htmlFor="password"  className='signUpLabels'><i className="wheatIcon fa-solid fa-wheat-awn"></i> Enter a password <i className="fa-solid fa-wheat-awn"></i></label>
         <input type="password" id='password' className='signUpInput'   name="password" value={password} onChange={(e)=>{handleChange(e)}} />
-        <label htmlFor="confirmationPassword"  className='signUpLabels'>confirm password</label>
+        <label htmlFor="confirmationPassword"  className='signUpLabels'><i className="wheatIcon fa-solid fa-wheat-awn"></i> confirm password <i className="fa-solid fa-wheat-awn"></i></label>
         <input type="password" id='confirmationPassword' name="confirmPassword" value={confirmPassword} className='signUpInput'   onChange={(e)=>{handleChange(e)}} />
         <button className='signUpButton' type='submit'>Sign up</button>
       </form>

@@ -70,47 +70,15 @@ body::after {
 }
 .ingredient{
     width: 30%;
-    height: 200px; 
-    margin-bottom: 1em;
-    padding:4em;
+    margin-bottom: 6em;
+    margin-top: 1em;
     border-radius: 5px;
-    overflow: visible;
 }
 
-.flour{
-    background-image: url(../images/flour.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-}
-.oil{
-    background-image: url(../images/oil.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-}
-.egg{
-    background-image: url(../images/eggs.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-}
-.milk{
-    background-image: url(../images/milk.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-}
-.butter{
-    background-image: url(../images/butter.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-}
-.honey{
-    background-image: url(../images/honey.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-    
-}
-.hiddenDescription{
-     display: none; 
-    
+.ingredientsIcons{
+  width: 10%;
+  text-align: center;
+  font-size: 35px;
 }
 .ingredientHeader{
     text-align: center;
@@ -120,19 +88,16 @@ body::after {
 .ingredientPara{
     font-size: 2rem;
     font-weight: 300;
-    overflow: hidden;
     min-width: 17ch;
    max-width: 40ch;
 }
 .ingredient:hover{
     height: 100%;
+    padding: 1em;
     background: #A52A2A;
     transition: 1s;
 }
-.ingredient:hover .hiddenDescription{
-    display: block;
-    color: #221402;
-}
+
 /* loading component */
 .logoLoading{
     position: fixed;
@@ -255,6 +220,7 @@ body::after {
     background-color: rgb(171, 7, 7);
   }
 /* log in styles */
+
 .loginForm{
     display: flex;
     flex-direction: column;
@@ -297,6 +263,9 @@ body::after {
 .loginSubmit:hover{
     background-color: rgb(171, 7, 7);
   }
+.wheatIcon{
+ transform: rotate(-90deg);
+}
 .error{
     text-align: center;
     color: #221402;
@@ -398,6 +367,18 @@ margin-top: 3em;
 
 
 /* responsive components */
+@media only screen and (max-width:1000px) {
+ 
+ 
+     .titleBarPng{
+       width: 40%;
+     }
+     .ingredient{
+      width: 40%;
+      padding: 1em;
+      
+  }
+ }
 
 @media only screen and (max-width:700px) {
   .product{
@@ -406,7 +387,17 @@ margin-top: 3em;
   .navItems{
     width: 90%;
    }
- 
+   .titleBarPng{
+    width: 50%;
+  }
+  .ingredient{
+    width: 100%;
+    padding: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+
 }
 
 @media only screen and (max-width:500px) {
@@ -423,5 +414,13 @@ margin-top: 3em;
     font-size: 8px;
     margin-top: 2em;
     }
+    .titleBarPng{
+      width: 60%;
+    }
+    .ingredient{
+      width: 100%;
+      padding: 1em;
+  }
+
 }
 

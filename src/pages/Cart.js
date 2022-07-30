@@ -1,5 +1,6 @@
 import React from "react";
 import "./pages.css";
+import title from "../images/title.png";
 import emptyCart from "../images/emptyCart.svg";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase-config";
@@ -24,6 +25,7 @@ export default function Cart(props) {
       return user.uid === userId;
     });
 
+
   const totalPrice = function () {
     let total = 0;
     for (let i = 0; i < userCart.products.length; i++) {
@@ -39,16 +41,32 @@ export default function Cart(props) {
       </>)
     }
     else{
-    return (<div className="total"><p>total =</p> <p className="totalPrice">{total}</p></div>);
+    return (
+      <div className="checkSide">
+        <form action="" className="checkOut">
+            <h3>Check out</h3>
+            <label htmlFor="cardNumber" className="checkLabels">Enter your card number <i className="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i></label>
+            <input type="number" id="cardNumber" className="checkInput" />
+            <label htmlFor="cvv" className="checkLabels">Enter your cvv</label>
+            <input type="number" id="cvv" className="checkInput"  />
+            <button type="submit" className="submitCheck">submit order</button>
+          </form>
+          <div className="total">
+     <p>total =</p> <p className="totalPrice">{total}</p>
+      </div>
+      </div>);
   }
   };
 
  
   return (
-    <>
-      <h1>Welcome {userCart.name}</h1>
+    <div className="cartPage">
+      <h1 className="userName">Welcome {userCart.name}<i className="fa-solid fa-cookie-bite"></i></h1>
+      <div className='titleBar'><img src={title} className="titleBarPng" alt="" /></div>
+      <div className="productsSide">
       {userCart.products.map((product) => {
           return (
+            
             <div className="cart">
             <div className="cartProduct">
               <button className='removeItem' onClick={() => onRemove(product.name,product.price)}>
@@ -61,15 +79,15 @@ export default function Cart(props) {
             </div>
             <div className="quantity">{product.price} x{product.quantity} </div>
         </div>
-        );
+        )
       
       })
         }
-      ;
-       
-      <div>
-        {totalPrice()}
+      
       </div>
-    </>
-  );
+       
+        {totalPrice()}
+      
+    </div>
+  )
 }

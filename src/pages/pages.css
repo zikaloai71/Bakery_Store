@@ -10,7 +10,6 @@
     align-items: center;
     background-color: brown;
    padding-left: 4em;
-  
 }
 .introCard{
     width: 50%;
@@ -48,6 +47,66 @@
     align-items: center;
 }
 /* cart page styles */
+.cartPage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+.userName{
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    width: 100%;
+    margin-top: 1em;
+    text-align: center;
+    color: rgb(56, 34, 5);
+    font-size: 40px;
+}
+.checkOut{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    background-color: #A52A2A;
+    box-shadow: 4px 0px 48px 0px rgba(166,90,90,0.49);
+    margin:2em 20% 0em 20%;
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px ;
+    padding: 1em;
+}
+
+.checkLabels{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.checkInput{
+    width: 60%;
+    padding: 0.4em;
+    border: 2px solid #6a4009;
+    border-radius: 5px;
+    outline: none;
+}
+.submitCheck{
+    width: 30%;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    color:white;
+    background-color: #6a4009;
+    font-size: 1rem;
+    font-weight: 800;
+    outline: none;
+    border: 0px;
+    padding: 0.4em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitCheck:hover{
+    background-color: rgb(171, 7, 7);
+  }
 .emptyCart{
 height: 50vh;
 width: 50%;
@@ -56,33 +115,43 @@ margin-right:25% ;
 }
 .emptyCartHeader{
     font-family: 'Edu NSW ACT Foundation', cursive;
+    width: 100%;
+    text-align: center;
     margin-top: 1em;
 }
-
+.checkSide{
+    width:50%;
+    margin-bottom: 2em;
+}
 .plus{
     position: absolute;
     font-family: 'Edu NSW ACT Foundation', cursive;
-    top: 30%;
+    top: 43.5%;
     right: 37%;
     border-radius: 50%;
     border: 0;
-    height: 20px;
-    width: 20px;
-    font-size: 1rem;
+    height: 40px;
+    width: 40px;
+    font-size: 2rem;
     font-weight: 800;
     background-color: brown;
     color: white;
     text-align: center;
-    line-height: 0.3;
+    line-height: 0.2;
 }
 .plus:hover{
     background-color: rgb(90, 4, 4);
 }
+.productsSide{
+    width: 50%;
+}
 .cart{
+    width: 50%;
    text-align: center;
    margin-top: 1em;
 }
 .cartProduct{
+    width: 100%;
     display: flex;
     font-family: 'Edu NSW ACT Foundation', cursive;
     margin-top: 1em;
@@ -91,12 +160,15 @@ margin-right:25% ;
 }
 .total{
     display: flex;
-    align-items: center;
+    width: 60%;
+    margin-left: 4.75em;
     justify-content: center;
     font-size: 2rem;
     font-family: 'Edu NSW ACT Foundation', cursive;
     color: white;
     background-color:rgb(63, 0, 0);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:5px ;
 }
 .cartItemTitle{
 font-size: 2rem;
@@ -137,6 +209,16 @@ font-size: 2rem;
     .logoCard{
         display: none;
     }
+  .productSide{
+     width: 100%;
+    margin-left: 30%;
+  }
+  .checkSide{
+    width: 100%;
+    
+  }
 
+  .total{
+    margin-left: 3.02em;
    }
-   
+}
