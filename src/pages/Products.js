@@ -5,7 +5,7 @@ import Product from '../components/Product';
 // import { collection , getDocs  } from "firebase/firestore";
 
 export default function Products(props) {
-  const { data , addProduct   } = props;
+  const { data , addProduct    } = props;
 
   return (
     <>

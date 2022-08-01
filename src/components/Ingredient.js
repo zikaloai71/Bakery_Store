@@ -11,13 +11,13 @@ export default function Ingredient() {
      <div className='titleBar'><img src={title} className="titleBarPng" alt="" /></div>
     <div className="ingredient ">
       <div className="hiddenDescription">
-       <h3 className=" ingredientHeader">Flour<i class="ingredientsIcons fa-solid fa-jar-wheat "></i></h3>
+       <h3 className=" ingredientHeader">Flour<i className="ingredientsIcons fa-solid fa-jar-wheat "></i></h3>
        <p className="ingredientPara">We have our high percentage of protein suited to chewy, crusty breads and other yeast-risen products and Less protein best for pie crusts, cakes, cookies, and biscuits.</p>
        </div>
     </div>
     <div className="ingredient">
     <div className="hiddenDescription">
-       <h3 className=" ingredientHeader">Egg<i className="  ingredientsIcons fa-solid fa-egg"></i></h3>
+       <h3 className=" ingredientHeader">Egg<i className="ingredientsIcons fa-solid fa-egg"></i></h3>
        
        <p className="ingredientPara">We use room-temperature eggs because they bind and emulsify better than cold ones. Additionally, room-temperature egg whites whip up better than the colder ones.</p>
        </div>

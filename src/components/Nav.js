@@ -10,7 +10,7 @@ import logo from "../images/Logo2.png";
 import LoadingComponent from "./LoadingComponent";
 
 export default function Nav(props) {
-  const { itemsInCart } = props;
+  const {products} = props;
   const { user  } = useContext(AuthContext);
   const navigate = useNavigate();
  
@@ -63,7 +63,7 @@ export default function Nav(props) {
                 Our Products
               </Link>
               <Link className="linkage" to="/Cart">
-              <i className="fa-solid fa-cart-shopping"><sup>{itemsInCart}</sup></i>
+              <i className="fa-solid fa-cart-shopping"><sup>{products}</sup></i>
              
               </Link>
               <Link className="linkage" onClick={handleSignOut} to="/LogIn">

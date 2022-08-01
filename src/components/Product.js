@@ -15,8 +15,6 @@ import "./components.css";
 export default function product(props) {
   const { data , addProduct} = props;
 
-
-
   return (
     <div className="product">
       <h3 className="productTitle">{data.title}</h3>

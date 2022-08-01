@@ -1,0 +1,114 @@
+[debug] [2022-08-01T09:47:15.964Z] ----------------------------------------------------------------------
+[debug] [2022-08-01T09:47:15.971Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\zekol\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-08-01T09:47:15.972Z] CLI Version:   11.4.0
+[debug] [2022-08-01T09:47:15.973Z] Platform:      win32
+[debug] [2022-08-01T09:47:15.973Z] Node Version:  v16.14.2
+[debug] [2022-08-01T09:47:15.976Z] Time:          Mon Aug 01 2022 11:47:15 GMT+0200 (Eastern European Standard Time)
+[debug] [2022-08-01T09:47:15.977Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-01T09:47:16.141Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-01T09:47:16.142Z] > authorizing via signed-in user (zekoloay99@gmail.com)
+[debug] [2022-08-01T09:47:18.168Z] java version "18.0.2" 2022-07-19
+Java(TM) SE Runtime Environment (build 18.0.2+9-61)
+
+[debug] [2022-08-01T09:47:18.170Z] Java HotSpot(TM) 64-Bit Server VM (build 18.0.2+9-61, mixed mode, sharing)
+
+[debug] [2022-08-01T09:47:18.195Z] Parsed Java major version: 18
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, hosting"}}
+[debug] [2022-08-01T09:47:18.278Z] [hub] writing locator at C:\Users\zekol\AppData\Local\Temp\hub-bakery-store-5b7a1.json
+[warn] !  functions: The functions emulator is configured but there is no functions source directory. Have you run firebase init functions? {"metadata":{"emulator":{"name":"functions"},"message":"The functions emulator is configured but there is no functions source directory. Have you run \u001b[1mfirebase init functions\u001b[22m?"}}
+[warn] !  firestore: Did not find a Cloud Firestore rules file specified in a firebase.json config file. {"metadata":{"emulator":{"name":"firestore"},"message":"Did not find a Cloud Firestore rules file specified in a firebase.json config file."}}
+[warn] !  firestore: The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"firestore"},"message":"The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-08-01T09:47:18.794Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-08-01T09:47:18.796Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-01T09:47:18.796Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\zekol\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.14.4.jar","--host","localhost","--port",8080],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\zekol\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.14.4.jar\",\"--host\",\"localhost\",\"--port\",8080],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2022-08-01T09:47:21.533Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 [none]
+[debug] [2022-08-01T09:47:23.826Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 200
+[debug] [2022-08-01T09:47:23.827Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 {"projectId":"bakery-store-5b7a1","projectNumber":"959013390303","displayName":"BAKERY-STORE","name":"projects/bakery-store-5b7a1","resources":{"hostingSite":"bakery-store-5b7a1","storageBucket":"bakery-store-5b7a1.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_4c7bbdf3-d3b6-4f26-a248-697bd8941565"}
+[debug] [2022-08-01T09:47:23.828Z] database rules config:  []
+[warn] !  database: Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"database"},"message":"Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-08-01T09:47:23.839Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-08-01T09:47:23.839Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-01T09:47:23.840Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2022-08-01T09:47:23.841Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\zekol\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.8.0.jar","--host","localhost","--port",9000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\zekol\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.8.0.jar\",\"--host\",\"localhost\",\"--port\",9000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2022-08-01T09:47:45.923Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bakery-store-5b7a1/sites 
+[debug] [2022-08-01T09:47:47.922Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/bakery-store-5b7a1/sites 200
+[debug] [2022-08-01T09:47:47.923Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/bakery-store-5b7a1/sites {"sites":[{"name":"projects/bakery-store-5b7a1/sites/bakery-store-5b7a1","defaultUrl":"https://bakery-store-5b7a1.web.app","appId":"1:959013390303:web:9209a3708c8e1a6907a66a","type":"DEFAULT_SITE"}]}
+[debug] [2022-08-01T09:47:47.924Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1/webApps/1:959013390303:web:9209a3708c8e1a6907a66a/config [none]
+[debug] [2022-08-01T09:47:50.036Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1/webApps/1:959013390303:web:9209a3708c8e1a6907a66a/config 200
+[debug] [2022-08-01T09:47:50.036Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1/webApps/1:959013390303:web:9209a3708c8e1a6907a66a/config {"projectId":"bakery-store-5b7a1","appId":"1:959013390303:web:9209a3708c8e1a6907a66a","storageBucket":"bakery-store-5b7a1.appspot.com","locationId":"europe-west","apiKey":"AIzaSyBg0sdzIeonGfPDFoUKrk0Q13RDpvDsjGE","authDomain":"bakery-store-5b7a1.firebaseapp.com","messagingSenderId":"959013390303","measurementId":"G-MS07K47W72"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2022-08-01T09:47:52.110Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-01T09:47:52.110Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-08-01T09:47:52.111Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\zekol\\.cache\\firebase\\emulators\\ui-v1.8.1\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\zekol\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.8.1\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-08-01T09:47:52.683Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬──────────────────────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port                        │ View in Emulator UI             │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Authentication │ localhost:9099                   │ http://localhost:4000/auth      │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Functions      │ Failed to initialize (see above) │                                 │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Firestore      │ localhost:8080                   │ http://localhost:4000/firestore │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Database       │ localhost:9000                   │ http://localhost:4000/database  │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Hosting        │ localhost:5000                   │ n/a                             │
+└────────────────┴──────────────────────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-08-01T12:47:16.917Z] ----------------------------------------------------------------------
+[debug] [2022-08-01T12:47:16.920Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\zekol\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-08-01T12:47:16.921Z] CLI Version:   11.4.0
+[debug] [2022-08-01T12:47:16.921Z] Platform:      win32
+[debug] [2022-08-01T12:47:16.921Z] Node Version:  v16.14.2
+[debug] [2022-08-01T12:47:16.923Z] Time:          Mon Aug 01 2022 14:47:16 GMT+0200 (Eastern European Standard Time)
+[debug] [2022-08-01T12:47:16.923Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-01T12:47:17.189Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-01T12:47:17.190Z] > authorizing via signed-in user (zekoloay99@gmail.com)
+[debug] [2022-08-01T12:47:18.618Z] java version "18.0.2" 2022-07-19
+
+[debug] [2022-08-01T12:47:18.620Z] Java(TM) SE Runtime Environment (build 18.0.2+9-61)
+Java HotSpot(TM) 64-Bit Server VM (build 18.0.2+9-61, mixed mode, sharing)
+
+[debug] [2022-08-01T12:47:18.647Z] Parsed Java major version: 18
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, hosting"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project bakery-store-5b7a1. This may result in unexpected behavior. 
+[debug] [2022-08-01T12:47:18.722Z] [hub] writing locator at C:\Users\zekol\AppData\Local\Temp\hub-bakery-store-5b7a1.json
+[warn] !  functions: The functions emulator is configured but there is no functions source directory. Have you run firebase init functions? {"metadata":{"emulator":{"name":"functions"},"message":"The functions emulator is configured but there is no functions source directory. Have you run \u001b[1mfirebase init functions\u001b[22m?"}}
+[warn] !  firestore: Did not find a Cloud Firestore rules file specified in a firebase.json config file. {"metadata":{"emulator":{"name":"firestore"},"message":"Did not find a Cloud Firestore rules file specified in a firebase.json config file."}}
+[warn] !  firestore: The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"firestore"},"message":"The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-08-01T12:47:18.777Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-08-01T12:47:18.778Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-01T12:47:18.778Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\zekol\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.14.4.jar","--host","localhost","--port",8080],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\zekol\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.14.4.jar\",\"--host\",\"localhost\",\"--port\",8080],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2022-08-01T12:47:47.787Z] > refreshing access token with scopes: []
+[debug] [2022-08-01T12:47:47.791Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-01T12:47:47.792Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-01T12:47:48.393Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-01T12:47:48.393Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-01T12:47:48.593Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 [none]
+[debug] [2022-08-01T12:47:49.138Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 200
+[debug] [2022-08-01T12:47:49.138Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bakery-store-5b7a1 {"projectId":"bakery-store-5b7a1","projectNumber":"959013390303","displayName":"BAKERY-STORE","name":"projects/bakery-store-5b7a1","resources":{"hostingSite":"bakery-store-5b7a1","storageBucket":"bakery-store-5b7a1.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_4c7bbdf3-d3b6-4f26-a248-697bd8941565"}
+[debug] [2022-08-01T12:47:49.139Z] database rules config:  []
+[warn] !  database: Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"database"},"message":"Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-08-01T12:47:49.145Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-08-01T12:47:49.145Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-01T12:47:49.146Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2022-08-01T12:47:49.146Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\zekol\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.8.0.jar","--host","localhost","--port",9000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\zekol\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.8.0.jar\",\"--host\",\"localhost\",\"--port\",9000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
